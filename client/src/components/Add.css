@@ -1,0 +1,16 @@
+.container{
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+button{
+    margin-bottom: 20px;
+}
+.title{
+    size: 16px;
+    font-weight: bold;
+}
+
+.fix{
+    max-height: 550px;
+    min-height: 550px;
+}

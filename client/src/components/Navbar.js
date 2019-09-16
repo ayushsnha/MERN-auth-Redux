@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     <div className='navbar-fixed'>
-      <nav className='z-depth-0'>
+      <nav className='z-depth-1'>
         <div className='nav-wrapper white'>
           <Link
             to='/'

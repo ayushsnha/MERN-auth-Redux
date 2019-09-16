@@ -12,7 +12,7 @@ import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './redux/actions/authActions';
 import PrivateRoute from './components/PrivateRoute';
 import Dashboard from './components/Dashboard';
-import d1 from './components/d1';
+import Add from './components/Add';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -44,7 +44,7 @@ function App() {
           <Route exact path='/login' component={Login} />
           <Switch>
             <PrivateRoute exact path='/dashboard' component={Dashboard} />
-            <PrivateRoute exact path='/d1' component={d1} />
+            <PrivateRoute exact path='/Add' component={Add} />
           </Switch>
         </div>
       </Router>
