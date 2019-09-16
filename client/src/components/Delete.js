@@ -17,6 +17,7 @@ class Delete extends React.Component {
     // console.log(this.props);
     return (
       <button
+        style={{ marginLeft: '5px', marginTop: '3px' }}
         onClick={this.onSubmit}
         className='btn  waves-light'
         type='submit'

@@ -67,6 +67,7 @@ class Modal extends Component {
     return (
       <div>
         <button
+          style={{ float: 'left', marginTop: '3px' }}
           className=' btn modal-trigger'
           data-target={`modal1 + ${this.props._id}`}
         >
@@ -138,18 +139,16 @@ class Modal extends Component {
                 <div className='modal-footer'>
                   <button
                     onSubmit={this.onSubmit}
-                    className=' modal-action modal-close waves-effect waves-green btn-flat'
+                    className=' modal-action modal-close btn waves-effect waves-green btn-flat'
                     type='submit'
                   >
                     SAVE
-                    <i className='material-icons right'>delete</i>
+                    <i className='material-icons right'>add_circle</i>
                   </button>
-                  <a
-                    href='/dashboard'
-                    className=' modal-action modal-close waves-effect waves-green btn-flat'
-                  >
+                  <button className=' modal-action modal-close btn waves-effect waves-green btn-flat'>
                     DISCARD
-                  </a>
+                    <i className='material-icons right'>cancel</i>
+                  </button>
                 </div>
               </form>
             </div>
