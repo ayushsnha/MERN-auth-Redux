@@ -6,11 +6,16 @@ const dotenv = require('dotenv');
 const port = process.env.PORT || 5000;
 const app = express();
 dotenv.config();
+const dev = app.get('env') !== 'production';
 const users = require('./server/routes/api/users'); //('./routes/api/users');
 const movies = require('./server/routes/api/movies');
-const Movie = require('./server/models/movies');
-const Movies = require('./server/models/movies');
-console.log(process.env.mongoURI);
+//settings for production Environment
+if (!dev) {
+  app.disable('x-powered-by');
+  // Serve static files from the React app
+  app.use(express.static(path.join(__dirname, 'client/build')));
+}
+//console.log(process.env.mongoURI);
 
 //bodyParser middleware config
 app.use(
@@ -46,5 +51,11 @@ mongoose
 // Routes
 app.use('/api/users', users);
 app.use('/api/movies', movies);
+
+if (!dev) {
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  });
+}
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
